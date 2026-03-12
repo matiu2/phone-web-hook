@@ -9,7 +9,7 @@ pub async fn send(body: &str, env: &Env) -> Result<()> {
     let url = format!("https://ntfy.sh/{topic}");
     let mut init = RequestInit::new();
     init.with_method(Method::Post);
-    init.with_body(Some(body.to_string().into()));
+    init.with_body(Some(body.into()));
     let req = Request::new_with_init(&url, &init)?;
     let response = Fetch::Request(req).send().await?;
     let status_code = response.status_code();
