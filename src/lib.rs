@@ -1,4 +1,5 @@
 pub mod auth;
+pub mod ntfy;
 
 use auth::is_authed;
 use worker::{Context, Env, Request, Response, Result, event};
